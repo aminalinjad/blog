@@ -1,18 +1,15 @@
 import {Col, Container, Row} from "react-bootstrap"
 import EachBlog from "../../components/eachBlog/eachBlog"
-import axios from "axios"
-import {useEffect, useState} from "react";
+import {useEffect, useState} from "react"
+import postService from "../../API/modules/postService"
 
 
 const Home = () => {
   let [data , setData] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:3000/recentBlog').then(res =>{
-      console.log(res)
-      setData(res.data)
-    }).catch(err => {
-      console.log(err)
-    })
+   postService.getRecentPostData().then(res => {
+     setData(res.data)
+   })
   } , [])
 
   return (
