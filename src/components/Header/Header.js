@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Navbar} from "react-bootstrap"
-import {NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom"
+import Search from "../search/search"
 
 
 const Header = () => {
@@ -21,6 +22,7 @@ const Header = () => {
           <NavLink activeClassName={'activeRoute'} to={'/contact-us'}>
             Contact Us
           </NavLink>
+          <Search/>
         </Container>
       </Navbar>
     </div>

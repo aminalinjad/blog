@@ -11,7 +11,6 @@ const Home = () => {
      setData(res.data)
    })
   } , [])
-
   return (
     <div>
       <h1 className={'text-center my-5'}>Recent Blog Post</h1>
