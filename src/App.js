@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
+import {Route, Switch} from "react-router-dom"
+import Home from "./page/Home/Home"
+import ContactUs from "./page/contactUs/contactUs"
+import AboutUs from "./page/aboutUs/aboutUs"
+import PostDetails from "./page/postDetails/postDetails"
+import notFoundPage from "./page/404Page/404Page"
+import Blog from "./page/blog/blogPage"
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route sensitive path="/contact-us" component={ContactUs}/>
+        <Route sensitive path="/about-us" component={AboutUs}/>
+        <Route exact sensitive path={'/blog'} component={Blog}/>
+        <Route sensitive path={'/blog/:name'} component={PostDetails}/>
+        <Route sensitive component={notFoundPage}/>
+
+      </Switch>
+      <Footer/>
     </div>
   );
 }

@@ -1,0 +1,8 @@
+.footer {
+    background: aqua;
+    color: #212121;
+    padding: 20px;
+}
+.footer p {
+    margin-bottom: 0;
+}
