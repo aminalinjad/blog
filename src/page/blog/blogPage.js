@@ -20,7 +20,7 @@ const Blog = () => {
           {
             data.map((data , index) => {
               return(
-                <Col lg={4} className={'mb-3'}>
+                <Col key={index} lg={4} className={'mb-3'}>
                   <EachBlog title={data.title} img={data.img} paragraph={data.paragraph}/>
                 </Col>)
             })

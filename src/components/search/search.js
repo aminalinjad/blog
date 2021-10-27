@@ -6,7 +6,7 @@ const Search = () => {
   function handleSearch(e) {
     const {value} = e.target;
     setSearchValue(value);
-    console.log({value})
+    console.log('send request for every click on input')
   }
 
   return (
