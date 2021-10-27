@@ -8,13 +8,15 @@ import AboutUs from "./page/aboutUs/aboutUs"
 import PostDetails from "./page/postDetails/postDetails"
 import notFoundPage from "./page/404Page/404Page"
 import Blog from "./page/blog/blogPage"
-import LoginRegisterPage from "./page/loginRegister/loginRegisterPage"
+import LoginRegisterPage from "./page/auth/loginRegisterPage"
+import {ToastContainer} from "react-toastify";
 
 
 function App() {
   return (
     <div>
       <Header/>
+      <ToastContainer />
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route sensitive path="/contact-us" component={ContactUs}/>
