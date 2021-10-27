@@ -8,6 +8,7 @@ import AboutUs from "./page/aboutUs/aboutUs"
 import PostDetails from "./page/postDetails/postDetails"
 import notFoundPage from "./page/404Page/404Page"
 import Blog from "./page/blog/blogPage"
+import LoginRegisterPage from "./page/loginRegister/loginRegisterPage"
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
         <Route sensitive path="/about-us" component={AboutUs}/>
         <Route exact sensitive path={'/blog'} component={Blog}/>
         <Route sensitive path={'/blog/:name'} component={PostDetails}/>
+        <Route sensitive path="/login" component={LoginRegisterPage}/>
         <Route sensitive component={notFoundPage}/>
-
       </Switch>
       <Footer/>
     </div>

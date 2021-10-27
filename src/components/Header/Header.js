@@ -9,7 +9,9 @@ const Header = () => {
     <div>
       <Navbar sticky={'top'} bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Amin Blog</Navbar.Brand>
+          <NavLink exact activeClassName={'activeRoute'}  to={'/login'}>
+            login/register
+          </NavLink>
             <NavLink exact activeClassName={'activeRoute'}  to={'/'}>
               Home
             </NavLink>
