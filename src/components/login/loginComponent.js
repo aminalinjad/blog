@@ -2,11 +2,14 @@ import {Button, Form} from "react-bootstrap"
 import {useState} from "react"
 import Auth from "../../API/modules/auth"
 import {toast} from "react-toastify";
+import {useHistory} from "react-router-dom";
 
 const LoginComponent = () => {
   let [username, setUserName] = useState('')
   let [password, setPassword] = useState('')
   let [disabledBtn, setDisabledBtn] = useState(false)
+
+  let history = useHistory()
 
   function setUsernameValue(e) {
     setUserName(e.target.value)
@@ -21,6 +24,7 @@ const LoginComponent = () => {
       password: password
     }
     Auth.Login(user).then(res => {
+      history.push('/')
       setDisabledBtn(false)
       toast.success('با موفقیت وارد شدید' , {
         position: 'bottom-right',

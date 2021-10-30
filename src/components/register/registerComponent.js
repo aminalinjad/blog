@@ -2,12 +2,15 @@ import React, {useState} from 'react';
 import {Button, Form} from "react-bootstrap"
 import Auth from "../../API/modules/auth"
 import {toast} from "react-toastify";
+import {useHistory} from "react-router-dom";
 
 const RegisterComponent = () => {
   let [username, setUserName] = useState('')
   let [fullName, setFullName] = useState('')
   let [password, setPassword] = useState('')
   let [disabledBtn, setDisabledBtn] = useState(false)
+
+  let history = useHistory()
 
   function setFullNameValue(e) {
     setFullName(e.target.value)
@@ -30,6 +33,7 @@ const RegisterComponent = () => {
     }
     Auth.register(user)
       .then(res => {
+        history.push('/')
         setDisabledBtn(false)
         toast.success('عملیات ثبت نام با موفقیت انجام شد', {
           position: 'bottom-right',
