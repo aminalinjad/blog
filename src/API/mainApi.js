@@ -11,7 +11,6 @@ API_V1.interceptors.response.use(response => {
     return response
   },
   async function (error) {
-    console.log(error.response.data.message)
     toast.error(`${error.response.data.message}`, {
       position: 'bottom-right',
       autoClose: 3000,
